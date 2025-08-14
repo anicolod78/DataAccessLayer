@@ -1,0 +1,29 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup Label="Globals">
+    <SccProjectName>SAK</SccProjectName>
+    <SccProvider>SAK</SccProvider>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccLocalPath>SAK</SccLocalPath>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <AssemblyName>IT.TnDigit.ORM.DataProviders.SQLServer</AssemblyName>
+    <RootNamespace>IT.TnDigit.ORM.DataProviders</RootNamespace>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <OutputPath>..\ORMConfigurator\netcoreapp3.1\Providers\</OutputPath>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="System.Data.SqlClient" Version="4.8.6" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Core\IT.TnDigit.Framework.DataProviders\IT.TnDigit.ORM.DataProviders.csproj" />
+    <ProjectReference Include="..\Core\IT.TnDigit.Framework.Interfaces\IT.TnDigit.ORM.Interfaces.csproj" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,22 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup Label="Globals">
+    <SccProjectName>SAK</SccProjectName>
+    <SccProvider>SAK</SccProvider>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccLocalPath>SAK</SccLocalPath>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <Title>Simple ORM interaction with various datasources</Title>
+    <Version>2.0.1</Version>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\IT.TnDigit.Framework.DataTypes\IT.TnDigit.ORM.DataTypes.csproj" />
+    <ProjectReference Include="..\IT.TnDigit.Framework.Interfaces\IT.TnDigit.ORM.Interfaces.csproj" />
+    <ProjectReference Include="..\IT.TnDigit.Framework.Storage\IT.TnDigit.ORM.DataStorage.csproj" />
+  </ItemGroup>
+
+</Project>

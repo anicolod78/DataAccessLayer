@@ -1,0 +1,26 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup Label="Globals">
+    <SccProjectName>SAK</SccProjectName>
+    <SccProvider>SAK</SccProvider>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccLocalPath>SAK</SccLocalPath>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <RootNamespace>IT.TnDigit.ORM.DataProviders</RootNamespace>
+    <AssemblyName>IT.TnDigit.ORM.DataProviders.Oracle</AssemblyName>
+    <Version>2.0.0</Version>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Oracle.ManagedDataAccess.Core" Version="2.19.280" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Core\IT.TnDigit.Framework.DataProviders\IT.TnDigit.ORM.DataProviders.csproj" />
+    <ProjectReference Include="..\Core\IT.TnDigit.Framework.Interfaces\IT.TnDigit.ORM.Interfaces.csproj" />
+  </ItemGroup>
+
+</Project>

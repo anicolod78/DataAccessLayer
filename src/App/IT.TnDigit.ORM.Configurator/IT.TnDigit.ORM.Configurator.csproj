@@ -1,0 +1,116 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+
+  <PropertyGroup Label="Globals">
+    <SccProjectName>SAK</SccProjectName>
+    <SccProvider>SAK</SccProvider>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccLocalPath>SAK</SccLocalPath>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows10.0.17763.0</TargetFramework>
+    <UseWindowsForms>true</UseWindowsForms>
+    <ProduceReferenceAssembly>True</ProduceReferenceAssembly>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <OutputPath>..\..\ORMConfigurator\</OutputPath>
+    <DebugType>portable</DebugType>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <DebugType>portable</DebugType>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Schemi\Schema_Procedure.txt" />
+    <None Remove="Schemi\Schema_Tabelle.txt" />
+    <None Remove="Schemi\Schema_Viste.txt" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Schemi\Schema_Procedure.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Schemi\Schema_Tabelle.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Schemi\Schema_Viste.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\Core\IT.TnDigit.Framework.ClientController\IT.TnDigit.ORM.ClientController.csproj" />
+    <ProjectReference Include="..\..\Core\IT.TnDigit.Framework.DataProviders\IT.TnDigit.ORM.DataProviders.csproj" />
+    <ProjectReference Include="..\..\IT.TnDigit.ORM.OracleProvider\IT.TnDigit.ORM.OracleProvider.csproj" />
+    <ProjectReference Include="..\..\IT.TnDigit.ORM.PostgreSQLProvider\IT.TnDigit.ORM.PostgreSQLProvider.csproj" />
+    <ProjectReference Include="..\..\IT.TnDigit.ORM.SqlClientProvider\IT.TnDigit.ORM.SqlClientProvider.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Configurations\ucDBConfig.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Configurations\ucDBConfig.Designer.cs">
+      <DependentUpon>ucDBConfig.cs</DependentUpon>
+    </Compile>
+    <Compile Update="Configurations\ucOBJSelect.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Configurations\ucOBJSelect.Designer.cs">
+      <DependentUpon>ucOBJSelect.cs</DependentUpon>
+    </Compile>
+    <Compile Update="Configurations\ucPRJConfig.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Configurations\ucPRJConfig.Designer.cs">
+      <DependentUpon>ucPRJConfig.cs</DependentUpon>
+    </Compile>
+    <Compile Update="Configurations\ucRULCreate.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Configurations\ucRULCreate.Designer.cs">
+      <DependentUpon>ucRULCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Update="Controls\FlatCombo.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="Controls\FlatCombo.Designer.cs">
+      <DependentUpon>FlatCombo.cs</DependentUpon>
+    </Compile>
+    <Compile Update="Controls\GroupBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="Controls\PulsanteGrafico.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="Controls\PulsanteGrafico.Designer.cs">
+      <DependentUpon>PulsanteGrafico.cs</DependentUpon>
+    </Compile>
+    <Compile Update="Controls\RigaSeparatore.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="Controls\RigaSeparatore.Designer.cs">
+      <DependentUpon>RigaSeparatore.cs</DependentUpon>
+    </Compile>
+    <Compile Update="Properties\Resources.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Controls\GroupBox.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>GroupBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+
+</Project>

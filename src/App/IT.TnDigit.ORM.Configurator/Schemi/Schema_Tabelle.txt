@@ -1,0 +1,147 @@
+﻿//----- Classe generata automaticamente------------------------------------
+//DAN version /*DANVERSION*/
+//DataProvider /*DPNAME*/ version /*DPVERSION*/
+//-------------------------------------------------------------------------
+
+#region Using directives
+
+using System;
+using System.Text;
+using System.Data;
+using IT.TnDigit.ORM.DataTypes;
+using IT.TnDigit.ORM.Interfaces;
+
+#endregion
+
+namespace /*NAMESPACE*/.TABELLE
+{
+    public partial class /*CLASSNAME*/ : /*BASECLASSNAME*/
+    {
+/*FIELDDECLARATION*/
+/*PRIMARYFIELDSPROPERTY*/
+/*FIELDSPROPERTY*/
+        
+        public /*CLASSNAME*/()
+        {
+        }
+
+        public override object CreaElemento(IDataRecord dati)
+        {
+            /*CLASSNAME*/ item = new /*CLASSNAME*/();
+
+/*FIELDLOADER*/
+
+			item.ResetPropertiesChanged();
+						
+            return item;
+        }
+
+
+        #region Serialization
+
+        public void Serialize(System.IO.BinaryWriter writer)
+        {
+/*FIELDSSERIALIZE*/
+        }
+
+        public static /*CLASSNAME*/ Deserialize(System.IO.BinaryReader reader)
+        {
+            /*CLASSNAME*/ item = new /*CLASSNAME*/();
+
+/*FIELDSDESERIALIZE*/
+
+            return item;
+        }
+
+        #endregion
+
+        #region SelfKnowledge
+
+        public override string TableName()
+        {
+            return "/*TABLENAME*/";
+        }
+        
+        public override string FieldsList()
+        {
+            return "/*FIELDSLIST*/";
+        }
+        
+/*FIELDNAMES*/
+        
+        #endregion
+    }
+
+    public partial class /*CLASSNAME*/Collection : System.Collections.Generic.List</*CLASSNAME*/>, IFrameworkCollection
+    {
+        public /*CLASSNAME*/Collection()
+        {
+        }
+
+        public /*CLASSNAME*/Collection(/*CLASSNAME*/[] items)
+        {
+           this.InsertRange(0, items);
+        }
+
+        public SupportCreaElemento Prototype()
+        {
+            return new /*CLASSNAME*/();
+        }
+        
+        #region Serialization
+
+        private static byte[] Serialize(System.Collections.IList items)
+        {
+
+            System.IO.MemoryStream st = new System.IO.MemoryStream();
+            System.IO.BinaryWriter writer = new System.IO.BinaryWriter(st);
+
+            int itemCount = items.Count;
+
+            // scrive il numero degli elementi
+            writer.Write(itemCount);
+
+            for (int idx = 0; idx < itemCount; idx++)
+            {
+                ((/*CLASSNAME*/)items[idx]).Serialize(writer);
+            }
+
+            writer.Flush();
+            return st.ToArray();
+        }
+
+        public static byte[] Serialize(/*CLASSNAME*/[] items)
+        {
+            return Serialize((System.Collections.IList)items);
+        }
+
+        public byte[] Serialize()
+        {
+            return Serialize((System.Collections.IList)this);
+        }
+
+        public static /*CLASSNAME*/Collection Deserialize(System.IO.BinaryReader reader)
+        {
+            int stCount = reader.ReadInt32();
+            /*CLASSNAME*/Collection items = new /*CLASSNAME*/Collection();
+
+            for (int idx = 0; idx < stCount; idx++)
+            {
+                /*CLASSNAME*/ item = /*CLASSNAME*/.Deserialize(reader);
+                items.Add(item);
+            }
+
+            return items;
+        }
+
+        public static /*CLASSNAME*/Collection Deserialize(byte[] buffer)
+        {
+            System.IO.MemoryStream st = new System.IO.MemoryStream(buffer);
+            System.IO.BinaryReader reader = new System.IO.BinaryReader(st);
+            return Deserialize(reader);
+        }
+
+        #endregion
+
+    }
+}

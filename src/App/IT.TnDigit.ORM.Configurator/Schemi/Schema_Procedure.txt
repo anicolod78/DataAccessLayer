@@ -1,0 +1,59 @@
+﻿//----- Classe generata automaticamente------------------------------------
+//DAN version /*DANVERSION*/
+//DataProvider /*DPNAME*/ version /*DPVERSION*/
+//-------------------------------------------------------------------------
+
+#region Using directives
+
+using System;
+using System.Collections.Generic;
+using System.Text;
+using IT.TnDigit.ORM.DataTypes;
+using IT.TnDigit.ORM.Interfaces;
+using System.Data;
+
+#endregion
+
+namespace /*NAMESPACE*/.PROCEDURE_DB./*PACKAGE*/
+{
+    public partial class /*CLASSNAME*/ : /*BASECLASSNAME*/
+    {
+        public /*CLASSNAME*/()
+        {
+			/*RETURNTABLE*/
+
+            //Impostazione nome StoredProcedure
+            this.Nome = "/*CLASSNAMECOMPLETO*/";
+
+            //Enumerazione parametri di input
+/*PARAMETRIINPUT*/
+
+            //Enumerazione parametri di output
+/*PARAMETRIOUTPUT*/
+        }
+
+        #region INPUT PARAMETERS
+
+/*PARAMETRIINPUTSET*/
+        
+        /*public tipo P1
+        {
+          set { this.input["P1"].Valore=value ; }
+        }*/
+
+
+        #endregion
+        
+        #region OUTPUT PARAMETERS DEFINITION
+
+/*PARAMETRIOUTPUTNAMES*/
+        
+        /*public string P3_Name
+        {
+            get { return "P3"; }
+        }*/
+
+        #endregion
+
+    }
+}
